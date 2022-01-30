@@ -5,9 +5,14 @@
 	1/27/22
 """
 
-print("This is assignment 1\n")
+print("Problem 1:\n")
 #Problem 1: Personal Information
 #	    - print out personal information to console
 print("Name:    Ryan Salinas")
 print("Address: 1109 Nancy Dr, Corpus Christi")
 print("         Texas, 78412")
+
+print("Problem 2:\n")
+#Problem 2: Land Calculation
+#	    - calculates acres from square feet
+sqFeet = int(input("Enter the sqare footage to convert to acres: ")
