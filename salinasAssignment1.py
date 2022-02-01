@@ -55,3 +55,19 @@ elif totalVal < 1.0:
 	print("Your total came out to less than a dollar at {:.2f}" .format(totalVal))
 else:
 	print("Your total came out to more than a dollar at {:.2f}" .format(totalVal))
+
+print("\nProblem 6:\n")
+# Problem 6: February Leap Year
+#	     - user enters a year and the program will return how many days of February are in the year
+#	     - The program will also say if it is a leap year or not
+year = int(input("Enter a year: "))
+if year % 100 == 0:
+	if year % 400 == 0:
+		print("Leap year")
+	else:
+		print("Not leap year")
+else:
+	if year % 4 == 0:
+		print("Leap year")
+	else:
+		print("Not leap year")
