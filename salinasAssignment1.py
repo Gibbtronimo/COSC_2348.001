@@ -40,4 +40,18 @@ elif personAge >= 13 and personAge < 20:
 else:
 	print("You are an adult")
 
+print("\nProblem 5:\n")
+# Problem 5: Change Counting Game
+#	     - User enters amount of coins, returns if it adds up to a dollar or not
+quarters = int(input("Enter the amount of quarters: "))
+dimes = int(input("Enter the amount of dimes: "))
+nickels = int(input("Enter the amount of nickels: "))
+pennies = int(input("Enter the amount of pennies: "))
+totalVal = (quarters*0.25) + (dimes*0.1) + (nickels*0.05) + (pennies*0.01)
 
+if totalVal == 1.0:
+	print("Congratulations! You won the game!")
+elif totalVal < 1.0:
+	print("Your total came out to less than a dollar at {:.2f}" .format(totalVal))
+else:
+	print("Your total came out to more than a dollar at {:.2f}" .format(totalVal))
