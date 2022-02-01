@@ -84,3 +84,29 @@ elif BMI >= 18.5 and BMI <= 25:
 	print("Your BMI indicates that you are optimal.")
 else:
 	print("Your BMI indicates that you are overweight.")
+
+print("\nProblem 8:\n")
+# Problem 8: Stock Transaction Program
+#	     - Joe's transaction calculations will be displayed
+stockName = "Acme Software, Inc."
+sharesBought = 2000
+buyPrice = 40.00
+buyBalance = sharesBought*buyPrice
+sellPrice = 42.75
+sellBalance = sharesBought*sellPrice
+brokerComm = 0.03
+totalBalance = 0.0
+print("Joe paid $" + str(buyBalance) + " for his "
+       + str(sharesBought) + " shares in " + stockName)
+totalBalance -= buyBalance
+print("Joe paid his broker $" + str(buyBalance*brokerComm) + " for the trade.")
+totalBalance -= buyBalance*brokerComm
+print("Joe sold all his shares in " + stockName + " for $" + str(sellBalance))
+totalBalance += sellBalance
+print("Joe paid his broker $" + str(sellBalance*brokerComm) + " for the trade.")
+totalBalance -= sellBalance*brokerComm
+print("Joe's total balance is $" + str(totalBalance))
+if totalBalance > 0:
+	print("Joe made a profit.")
+else:
+	print("Joe did not make a profit.")
