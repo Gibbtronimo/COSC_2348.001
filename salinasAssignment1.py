@@ -71,3 +71,16 @@ else:
 		print("Leap year")
 	else:
 		print("Not leap year")
+
+print("\nProblem 7:\n")
+# Problem 7: BMI Calculator
+#	     - user inputs height and weight to get a calculated BMI
+height = int(input("Enter your height in inches: "))
+weight = int(input("Enter your weight in pounds(integer): "))
+BMI = (weight*703)/(height**2)
+if BMI < 18.5:
+	print("Your BMI indicates that you are underweight.")
+elif BMI >= 18.5 and BMI <= 25:
+	print("Your BMI indicates that you are optimal.")
+else:
+	print("Your BMI indicates that you are overweight.")
