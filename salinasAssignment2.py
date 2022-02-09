@@ -98,4 +98,8 @@ for i in range(2,51):
         break
 # cant get it to print 2 for some reason
 
+print("\nProblem 6:\n")
+# Problem 6: Individual methods for problems 1-3
+print("part 1:")
+def formula1(n,r):
 
