@@ -68,3 +68,22 @@ sort(numList)
 #print new list
 print("New List: ",numList)
 
+
+print ("\nProblem 4:\n")
+# Problem 4: Even and Odd list from preexisting list
+#            - sort the list into odd and even numbers, then
+#            - put those sorted numbers into separate lists
+# numList from problem 3 will be used here
+# create the odd and even lists
+oddNums = []
+evenNums = []
+# loop to sort the list
+for i in range(len(numList)):
+    if numList[i] % 2 == 0:
+        evenNums.append(numList[i])
+    else:
+        oddNums.append(numList[i])
+
+print("Even list: ",evenNums)
+print("Odd list: ",oddNums)
+
