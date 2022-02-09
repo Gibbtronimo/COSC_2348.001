@@ -87,3 +87,15 @@ for i in range(len(numList)):
 print("Even list: ",evenNums)
 print("Odd list: ",oddNums)
 
+print("\nProblem 5:\n")
+# Problem 5: Find prime numbers
+#            - print prime numbers between 2 and 50 inclusively
+for i in range(2,51):
+    for j in range(2,51):
+        if i % j == 0:
+            break
+        print(i)
+        break
+# cant get it to print 2 for some reason
+
+
