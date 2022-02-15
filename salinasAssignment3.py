@@ -1,5 +1,8 @@
 '''
     Assignment 3
+    Ryan Salinas
+    COSC 2348.001
+    2/15/22
 '''
 
 print("Problem 1:")
