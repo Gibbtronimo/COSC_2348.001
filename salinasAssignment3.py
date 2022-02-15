@@ -4,6 +4,8 @@
     COSC 2348.001
     2/15/22
 '''
+# import pandas library to format output of Problem 2/3
+import pandas as pd
 
 print("Problem 1:\n")
 # Problem 1: Car Class
@@ -50,20 +52,21 @@ class Employee():
 
 
     def show_data(self):
-        print("{:<0} {:<12} {:<12} {:<12} {:<12} {:<15} {:<15}"
-               .format(self._F_NAME,
-                       self._L_NAME,
-                       self._ID,
-                       self._DEPT,
-                       self._J_TITLE,
-                       self._FULLNAME,
-                       self._EMAIL))
+        return [self._F_NAME,
+                self._L_NAME,
+                self._ID,
+                self._DEPT,
+                self._J_TITLE,
+                self._FULLNAME,
+                self._EMAIL]
 
+# input employee data
 smeyers = Employee("Susan","Meyers",47899,"Accounting","Vice President")
 mjones = Employee("Mark","Jones",39119,"IT","Programmer")
 jrogers = Employee("Joy","Rogers",81774,"Manufacturing","Engineer")
-print("{:<15} {:<15} {:<15} {:<15} {:<15} {:<15}"
-       .format("Name","ID Number","Department","Job Title","Full Name","Email"))
-smeyers.show_data()
-mjones.show_data()
-jrogers.show_data()
+#format employee data for table output
+data = [smeyers.show_data(),mjones.show_data(),jrogers.show_data()]
+table = pd.DataFrame(data, columns = ["Name","","ID Number","Department",
+                                      "Job Title","Full Name","Email"])
+print(table)
+
