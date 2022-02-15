@@ -5,7 +5,7 @@
     2/15/22
 '''
 
-print("Problem 1:")
+print("Problem 1:\n")
 # Problem 1: Car Class
 #            - create a car class with attributes and functions
 class Car():
@@ -31,4 +31,30 @@ for i in range(5):
     myTruck.brake()
     print(myTruck.get_speed())
 
+print("\nProblem 2:\n")
+# Problem 2: Employee Class
+#            - create an employee class with attributes and functions
+#            - 3 employees will be created with database naming conventions
+class Employee():
+    def __init__(self, F_NAME, L_NAME, ID, DEPT, J_TITLE):
+        self._F_NAME = F_NAME
+        self._L_NAME = L_NAME
+        self._ID = ID
+        self._DEPT = DEPT
+        self._J_TITLE = J_TITLE
 
+    def show_data(self):
+        print("{:<0} {:<12} {:<12} {:<12} {:<12}"
+               .format(self._F_NAME,
+                       self._L_NAME,
+                       self._ID,
+                       self._DEPT,
+                       self._J_TITLE))
+
+smeyers = Employee("Susan","Meyers",47899,"Accounting","Vice President")
+mjones = Employee("Mark","Jones",39119,"IT","Programmer")
+jrogers = Employee("Joy","Rogers",81774,"Manufacturing","Engineer")
+print("{:<15} {:<15} {:<15} {:<15}".format("Name","ID Number","Department","Job Title"))
+smeyers.show_data()
+mjones.show_data()
+jrogers.show_data()
