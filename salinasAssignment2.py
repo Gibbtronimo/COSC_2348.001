@@ -102,4 +102,5 @@ print("\nProblem 6:\n")
 # Problem 6: Individual methods for problems 1-3
 print("part 1:")
 def formula1(n,r):
+    print()
 
