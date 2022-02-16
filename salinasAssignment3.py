@@ -70,3 +70,29 @@ table = pd.DataFrame(data, columns = ["Name","","ID Number","Department",
                                       "Job Title","Full Name","Email"])
 print(table)
 
+print("\nProblem 4:\n")
+# Problem 4: Student Database
+#            - a program to sort students based on total grade and average grade
+
+class Student():
+    def __init__(self,course1,course2,course3,course4,course5,course6):
+        self._C1 = course1
+        self._C2 = course2
+        self._C3 = course3
+        self._C4 = course4
+        self._C5 = course5
+        self._C6 = course6
+
+    def get_percentage(self):
+        sum = (self._C1 + self._C2 + self._C3 +
+               self._C4 + self._C5 + self._C6)
+        percent = "{:.2f}".format(sum/600)
+        return percent
+
+# Student list to hold student objects
+students = []
+student1 = Student(90,90,90,90,90,90)
+student2 = Student(92,92,92,90,92,90)
+student3 = Student(82,88,90,89,90,88)
+
+print(student1.get_percentage())
