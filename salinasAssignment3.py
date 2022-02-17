@@ -6,6 +6,8 @@
 '''
 # import pandas library to format output of Problem 2/3
 import pandas as pd
+# import random for student class
+import random
 
 print("Problem 1:\n")
 # Problem 1: Car Class
@@ -75,13 +77,13 @@ print("\nProblem 4:\n")
 #            - a program to sort students based on total grade and average grade
 
 class Student():
-    def __init__(self,course1,course2,course3,course4,course5,course6):
-        self._C1 = course1
-        self._C2 = course2
-        self._C3 = course3
-        self._C4 = course4
-        self._C5 = course5
-        self._C6 = course6
+    def __init__(self,intlist):
+        self._C1 = intlist[0]
+        self._C2 = intlist[1]
+        self._C3 = intlist[2]
+        self._C4 = intlist[3]
+        self._C5 = intlist[4]
+        self._C6 = intlist[5]
 
     def get_percentage(self):
         sum = (self._C1 + self._C2 + self._C3 +
@@ -89,10 +91,11 @@ class Student():
         percent = "{:.2f}".format(sum/600)
         return percent
 
-# Student list to hold student objects
-students = []
-student1 = Student(90,90,90,90,90,90)
-student2 = Student(92,92,92,90,92,90)
-student3 = Student(82,88,90,89,90,88)
+# random number generator
+randlist = random.sample(range(70,100),6)
+print(randlist)
+for i in range(25):
+    randlist = random.sample(range(70,100),6)
+    print(("student%d: ",randlist).format(i))
+    student{i} = Student(randlist)
 
-print(student1.get_percentage())
