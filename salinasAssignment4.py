@@ -115,6 +115,25 @@ def delete(dictionary):
 
 # Problem 2: Number Analysis List
 #            - takes list of 20 numbers and performs calculations on the list
+def numAnalysis(numList):
+    print("Enter 20 numbers into a list one by one")
+    for i in range(0,20):
+        num = float(input("Enter a number: "))
+        numList.append(num)
+
+    lowest = numList[0]
+    highest = numList[0]
+    total = 0
+    for i in range(0,20):
+        if numList[i] < lowest:
+            lowest = numList[i]
+        elif numList[i] > highest:
+            highest = numList[i]
+        total += numList[i]
+    print("\nLowest number in the list: ",lowest)
+    print("Highest number in the list: ",highest)
+    print("Total of numbers in the list: ",total)
+    print("Average of the list: ",(total/len(numList)))
 
 if __name__ == "__main__":
     print("\nProblem 1:")
@@ -134,4 +153,7 @@ if __name__ == "__main__":
         elif menu_choice == DELETE:
             delete(employees)
 
-    print("\nProblem 2:")
+    print("\nProblem 2:\n")
+    numberList = []
+
+    numAnalysis(numberList)
