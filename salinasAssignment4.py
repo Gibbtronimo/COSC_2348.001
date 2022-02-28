@@ -4,7 +4,7 @@
     COSC 2348.001
     2/22/22
 '''
-print("\nProblem 1:")
+
 # Problem 1: Employee Management System
 #            - store employee objects in a dictionary
 
@@ -87,6 +87,7 @@ def add(dictionary):
     else:
         print("That entry already exists!\n")
 
+# Function to change an employee attribute
 def change(dictionary):
     emp_id = input("Enter an id: ")
     try:
@@ -104,6 +105,7 @@ def change(dictionary):
     except:
         print("That employee does not exist!\n")
 
+# Function to delete an employee from the library
 def delete(dictionary):
     emp_id = input("Enter an id: ")
     if emp_id in dictionary:
@@ -111,8 +113,11 @@ def delete(dictionary):
     else:
         print("That employee does not exist!\n")
 
+# Problem 2: Number Analysis List
+#            - takes list of 20 numbers and performs calculations on the list
 
 if __name__ == "__main__":
+    print("\nProblem 1:")
     employees = dict()
 
     menu_choice = 0
@@ -129,3 +134,4 @@ if __name__ == "__main__":
         elif menu_choice == DELETE:
             delete(employees)
 
+    print("\nProblem 2:")
