@@ -3,8 +3,11 @@
     Ryan Salinas
     2/28/22
 '''
+import statistics # Problem 4
+#-------------------------------------------------------------------------------------------------
 # Problem 1: More Code String Converter
 #            - a morse code dictionary is used to convert a user-input string into morse code
+#-------------------------------------------------------------------------------------------------
 
 # Morse Code Dictionary for problem 1
 morseTable = {' ':' ',',':'--..--','.':'.-.-.-','?':'..--..',
@@ -21,8 +24,10 @@ def morseCode():
     for ch in userString:
         print(morseTable[ch],end='')
 
+#------------------------------------------------------------------------------------------------
 # Problem 2: String Analysis
 #            - these functions count the number of vowels and consonants in a user-input string
+#------------------------------------------------------------------------------------------------
 
 # Vowel list used in both functions
 vList = ['a','e','i','o','u']
@@ -45,8 +50,10 @@ def strConsts(strInput):
             consts += 1
     return consts
 
+#-----------------------------------------------------------------------------------------------
 # Problem 3: String cleanup
 #            - these programs will apply string functions to the strings inputted
+#-----------------------------------------------------------------------------------------------
 
 # Function 1 for Problem 3
 def part1(string):
@@ -91,6 +98,48 @@ def part4(string):
             newstr += ch
     return newstr
 
+#----------------------------------------------------------------------------------------------
+# Problem 4: Exception handling
+#            - create list, find average/median/standard deviation, and create new list
+#            - with division of first and second elements as new elements
+#----------------------------------------------------------------------------------------------
+
+# Function 1 for Problem 4
+def makeList(uList):
+    try:
+        print("Enter 'n' number of inputs for the list (n>10)")
+        print("The values must be between 0 to 100 inclusive")
+        n = int(input("List size: "))
+        total = 0
+        if n > 10:
+            for i in range(0,n):
+                num = int(input("Enter a number: "))
+                if (num > 0) and (num < 100):
+                    uList.append(num)
+                    total += num
+                else:
+                    print("The number needs to be at least 0 and at most 100")
+        else:
+            print("The list size must at least be 10")
+
+        average = total/len(uList)
+        print("Average: ",average)
+        median = statistics.median(uList)
+        print("Median: ",median)
+        std_dev = statistics.stdev(uList)
+        print("Standard Deviation: ",std_dev)
+
+    except:
+        print("Input must be an integer") 
+
+# Function 2 for Problem 4
+def newList(uList):
+    newList = []
+    for i in range(0,len(uList)-1):
+        num = uList[i]/uList[i+1]
+        newList.append(round(num,2))
+    return newList
+
 if __name__ == "__main__":
     print("Problem 1:\n")
     morseCode()
@@ -122,3 +171,9 @@ if __name__ == "__main__":
     str4 = part4(str4)
     print("String 4 after: ",str4)
 
+    print("\nProblem 4:\n")
+    userList = []
+    makeList(userList)
+    print("User list: ",userList)
+    userList = newList(userList)
+    print("New list: ",userList)
