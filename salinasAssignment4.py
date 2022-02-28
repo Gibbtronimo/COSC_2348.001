@@ -4,7 +4,7 @@
     COSC 2348.001
     2/22/22
 '''
-
+import random
 # Problem 1: Employee Management System
 #            - store employee objects in a dictionary
 
@@ -135,6 +135,15 @@ def numAnalysis(numList):
     print("Total of numbers in the list: ",total)
     print("Average of the list: ",(total/len(numList)))
 
+# Problem 3: Square number dictionary
+#            - program to create a dictionary and print the contents
+def dictScript():
+    n = int(input("Enter a number n: "))
+    numDict = dict()
+    num = random.randint(1,n)
+    numDict[num] = num*num
+    print(numDict)
+
 if __name__ == "__main__":
     print("\nProblem 1:")
     employees = dict()
@@ -157,3 +166,7 @@ if __name__ == "__main__":
     numberList = []
 
     numAnalysis(numberList)
+
+    print("\nProblem 3:\n")
+    dictScript()
+    
