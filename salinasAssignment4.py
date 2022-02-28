@@ -144,6 +144,27 @@ def dictScript():
     numDict[num] = num*num
     print(numDict)
 
+# Problem 4: Random Number List
+#            - create list of 100 numbers, find second largest number, and remove duplicate 
+def randList():
+    numList = []
+    for i in range(0,100):
+        n = random.randint(0,20)
+        numList.append(n)
+    print(numList,len(numList))
+    first = 0
+    second = 0
+    for i in range(0,100):
+        if numList[i] > first:
+            second = first
+            first = numList[i]
+    print("Second largest element: ",second)
+
+    # Convert list to set because sets do not allow repeating elements, then convert back to list
+    numSet = set(numList)
+    numList = list(numSet)
+
+
 if __name__ == "__main__":
     print("\nProblem 1:")
     employees = dict()
@@ -169,4 +190,7 @@ if __name__ == "__main__":
 
     print("\nProblem 3:\n")
     dictScript()
+
+    print("\nProblem 4:\n")
+    randList()
     
