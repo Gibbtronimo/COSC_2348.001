@@ -4,6 +4,8 @@
     2/28/22
 '''
 import statistics # Problem 4
+import re # Problem 5
+
 #-------------------------------------------------------------------------------------------------
 # Problem 1: More Code String Converter
 #            - a morse code dictionary is used to convert a user-input string into morse code
@@ -20,9 +22,12 @@ morseTable = {' ':' ',',':'--..--','.':'.-.-.-','?':'..--..',
 def morseCode():
     print("Allowable characters: ' ,.?', 0-9, a-z")
     userString = input("Enter a string to convert to morsecode: ")
-    userString = userString.lower()
-    for ch in userString:
-        print(morseTable[ch],end='')
+    try:
+        userString = userString.lower()
+        for ch in userString:
+            print(morseTable[ch],end='')
+    except:
+        print("You entered a character that was not allowed!")
 
 #------------------------------------------------------------------------------------------------
 # Problem 2: String Analysis
@@ -56,6 +61,7 @@ def strConsts(strInput):
 #-----------------------------------------------------------------------------------------------
 
 # Function 1 for Problem 3
+# - counts digits and symbols in the string
 def part1(string):
     letters = 0
     digits = 0
@@ -73,6 +79,7 @@ def part1(string):
     print("Symbols: ",symbols)
 
 # Function 2 for Problem 3
+# - removes special symbols and punctuation
 def part2(string):
     newstr = ""
     for ch in string:
@@ -81,6 +88,7 @@ def part2(string):
     return newstr
 
 # Function 3 for Problem 3
+# - removes '-' and replaces with ' '
 def part3(string):
     newstr = ""
     for ch in string:
@@ -91,6 +99,7 @@ def part3(string):
     return newstr
 
 # Function 4 for Problem 3
+# - removes all consonants
 def part4(string):
     newstr = ""
     for ch in string:
@@ -114,7 +123,7 @@ def makeList(uList):
         if n > 10:
             for i in range(0,n):
                 num = int(input("Enter a number: "))
-                if (num > 0) and (num < 100):
+                if (num >= 0) and (num < 100):
                     uList.append(num)
                     total += num
                 else:
@@ -123,11 +132,11 @@ def makeList(uList):
             print("The list size must at least be 10")
 
         average = total/len(uList)
-        print("Average: ",average)
+        print("Average: ",round(average,3))
         median = statistics.median(uList)
-        print("Median: ",median)
+        print("Median: ",round(median,3))
         std_dev = statistics.stdev(uList)
-        print("Standard Deviation: ",std_dev)
+        print("Standard Deviation: ",round(std_dev,3))
 
     except:
         print("Input must be an integer") 
@@ -136,10 +145,70 @@ def makeList(uList):
 def newList(uList):
     newList = []
     for i in range(0,len(uList)-1):
-        num = uList[i]/uList[i+1]
-        newList.append(round(num,2))
+        try:
+            num = uList[i]/uList[i+1]
+            newList.append(round(num,2))
+        except ZeroDivisionError:
+            print("Cannot divide by zero!\n")
     return newList
 
+#---------------------------------------------------------------------------------------------
+# Problem 5: String Conversion Using Loops
+#            - Convert a given string to different variations
+#---------------------------------------------------------------------------------------------
+
+# Function 1 for Problem 5
+# - makes the first letter of each word in the string uppercase
+def upperCase(string):
+    newstring = ""
+    split = re.split('\s',string)
+    for w in split:
+        newstring += w[0].upper()
+        newstring += w[1:len(w)].lower() + ' '
+    return newstring
+
+# Function 2 for Problem 5
+# - removes the spaces from the string
+def noSpaces(string):
+    newstring = ""
+    string = upperCase(string)
+    split = re.split('\s',string)
+    for w in split:
+        newstring += w
+    return newstring
+
+
+# Function 3 for Problem 5
+# - replaces all instances of 's' with '$' and removes the first 'the' in the string
+def sToCash(string):
+    newstring = ""
+    string = upperCase(string)
+    split = re.split('[sS]',string)
+    split = split[:len(split)-1]
+    for w in split:
+        newstring += w + '$'
+    split2 = re.split('\s',newstring)
+    del split2[2]
+    newstring = ""
+    for w in split2:
+        newstring += w + ' '
+    return newstring
+
+
+# Function 4 for Problem 5
+# - only applies upper case to the non-article words (nouns?)
+def selectUpper(string):
+    newstring = ""
+    split = re.split('\s',string)
+    for w in split:
+        if w == split[0] or w == split[3] or w == split[6]:
+            newstring += w[0].upper()
+            newstring += w[1:len(w)] + ' '
+        else:
+            newstring += w + ' '
+    return newstring
+
+# Main function
 if __name__ == "__main__":
     print("Problem 1:\n")
     morseCode()
@@ -177,3 +246,11 @@ if __name__ == "__main__":
     print("User list: ",userList)
     userList = newList(userList)
     print("New list: ",userList)
+
+    print("\nProblem 5:\n")
+    str5 = "this is the string for the class"
+    print("String 5: " + str5)
+    print("1: " + upperCase(str5))
+    print("2: " + noSpaces(str5))
+    print("3: " + sToCash(str5))
+    print("4: " + selectUpper(str5))
