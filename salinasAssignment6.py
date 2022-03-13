@@ -22,7 +22,10 @@ def readFiles(p1,p2,p3):
     f3.close()
 
 
-
+#-------------------------------------------------------------------------------------------------
+# Problem 1: Students.txt
+#            - read in students.txt and A3 to create new students file
+#-------------------------------------------------------------------------------------------------
 #Create Student class for problem 1
 class Student():
     def __init__(self,fname,lname,email,courses):
