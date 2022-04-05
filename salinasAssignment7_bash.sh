@@ -9,7 +9,7 @@ class_2="Cyber Defense II"
 class_3="Intro to Scripting"
 class_4="Technical and Professional Writing"
 class_5="Digital Forensics"
-
+echo
 echo Problem 2:
 echo $var_name
 echo $class_1
@@ -25,3 +25,7 @@ echo Class 2: $3
 echo Class 3: $4
 echo Class 4: $5
 echo Class 5: $6
+echo
+echo Problem 4:
+echo Current process number: $$
+echo All arguments passed: $*
