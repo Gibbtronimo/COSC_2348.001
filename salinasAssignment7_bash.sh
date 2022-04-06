@@ -29,3 +29,24 @@ echo
 echo Problem 4:
 echo Current process number: $$
 echo All arguments passed: $*
+echo
+echo Problem 5:
+grades=($(shuf -i 0-100 -n 1))
+if [[ $grades -le 100 && $grades -ge 90 ]]
+then
+	echo Your grade of $grades is an A
+elif [[ $grades -lt 90 && $grades -ge 80 ]]
+then
+	echo Your grade of $grades is a B
+elif [[ $grades -lt 80 && $grades -ge 70 ]]
+then
+	echo Your grade of $grades is a C
+elif [[ $grades -lt 70 && $grades -ge 60 ]]
+then
+	echo Your grade of $grades is a D
+elif [[ $grades -lt 60 ]]
+then
+	echo Your grade of $grades is an F
+else
+	echo $grades is outside of bounds
+fi
