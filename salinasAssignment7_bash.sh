@@ -65,3 +65,35 @@ echo $b % $y = $((b%y))
 echo $x ^ $y = $((x**y))
 echo $((z++)) + 1 = $z
 echo $((a--)) - 1 = $a
+echo
+echo Problem 7:
+echo -n "Enter your basic salary with no commas or spaces: "
+read salary
+echo $salary
+if [[ $salary -le 10000 ]]
+then
+	hra=$(echo "scale=2; $salary * 0.2" | bc)
+	da=$(echo "scale=2; $salary * 0.8" | bc)
+	echo HRA: $hra
+	echo DA: $da
+	echo -n "Gross Salary: "
+	echo "scale=2; $salary + $hra + $da" | bc
+elif [[ $salary -ge 10001 && $salary -le 20000 ]]
+then	
+	hra=$(echo "scale=2; $salary * 0.25" | bc)
+	da=$(echo "scale=2; $salary * 0.9" | bc)	
+	echo HRA: $hra
+	echo DA: $da
+	echo -n "Gross Salary: "
+	echo "sclae=2; $salary + $hra + $da" | bc
+elif [[ $salary -ge 20001 ]]
+then
+	hra=$(echo "scale=2; $salary * 0.3" | bc)
+	da=$(echo "scale=2; $salary * 0.95" | bc)
+	echo HRA: $hra
+	echo DA: $da
+	echo -n "Gross Salary: "
+	echo "scale=2; $salary + $hra + $da" | bc
+else
+	echo Basic Salary is out of range
+fi
