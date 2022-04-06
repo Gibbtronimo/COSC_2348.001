@@ -50,3 +50,18 @@ then
 else
 	echo $grades is outside of bounds
 fi
+echo
+echo Problem 6:
+x=7
+y=3
+z=49
+a=27
+b=73
+echo $z + $b = $((z+b))
+echo $a - $y = $((a-y))
+echo $x x $a = $((x*a))
+echo $z / $x = $((z/x))
+echo $b % $y = $((b%y))
+echo $x ^ $y = $((x**y))
+echo $((z++)) + 1 = $z
+echo $((a--)) - 1 = $a
