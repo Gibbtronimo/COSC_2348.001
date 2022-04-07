@@ -1,6 +1,7 @@
 #!/bin/bash
 
 #Problem 1
+echo Problem 1:
 x=1
 # Using while loop
 while [ $x -le 15 ]
@@ -16,7 +17,37 @@ do
 done
 echo
 # Using for loop
-for num in 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15
+for num in $( seq 15)
 do
 	echo -n $num" "
-done	
+done
+echo
+#Problem 2
+echo
+echo Problem 2:
+sum=0
+first=20
+# Using while loop
+while [ $first -le 40 ]
+do	
+	sum=$(expr $sum + $first)
+	((first=first+1))
+done
+echo Sum: $sum
+sum=0
+first=20
+# Using until loop
+until [ $first -eq 41 ]
+do
+	sum=$(expr $sum + $first)
+	((first=first+1))
+done
+echo Sum: $sum
+sum=0
+# Using for loop
+for first in $( seq 20 40)
+do
+	sum=$(expr $sum + $first)
+	((first=first+1))	
+done
+echo Sum: $sum
