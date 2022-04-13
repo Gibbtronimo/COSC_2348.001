@@ -73,3 +73,20 @@ case "$city" in
 	;;
 *) echo "Texas A&M University"
 esac
+
+#Problem 5 bonus
+echo -e "\nProblem 5:"
+var_test=25
+
+if test $var_test -ge 1 && test $var_test -le 10
+then
+	echo Between 1 to 10
+elif test $var_test -ge 11 && test $var_test -le 20
+then
+	echo Between 11 to 20
+elif test $var_test -gt 20
+then
+	echo Greater than 20
+else
+	echo Less than 1
+fi
