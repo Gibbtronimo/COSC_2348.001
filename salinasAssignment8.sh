@@ -1,5 +1,10 @@
 #!/bin/bash
-
+<<com
+	Assignment 8
+	Ryan Salinas
+	COSC 2348.001
+	4/7/22
+com
 #Problem 1
 echo Problem 1:
 x=1
@@ -21,10 +26,9 @@ for num in $( seq 15)
 do
 	echo -n $num" "
 done
-echo
+
 #Problem 2
-echo
-echo Problem 2:
+echo -e '\n\nProblem 2:'
 sum=0
 first=20
 # Using while loop
@@ -47,7 +51,8 @@ sum=0
 # Using for loop
 for first in $( seq 20 40)
 do
-	sum=$(expr $sum + $first)
-	((first=first+1))	
+       sum=$(expr $sum + $first)
+       ((first=first+1))
 done
 echo Sum: $sum
+
