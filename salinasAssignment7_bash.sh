@@ -1,4 +1,10 @@
 #!/bin/bash
+<<com
+	Assignment 7 pt 2
+	Ryan Salinas
+	COSC 2348.001
+	4/5/22
+com
 # Uses bash shell
 echo Problem 1:
 echo This is Assignment 7
@@ -85,7 +91,7 @@ then
 	echo HRA: $hra
 	echo DA: $da
 	echo -n "Gross Salary: "
-	echo "sclae=2; $salary + $hra + $da" | bc
+	echo "scale=2; $salary + $hra + $da" | bc
 elif [[ $salary -ge 20001 ]]
 then
 	hra=$(echo "scale=2; $salary * 0.3" | bc)
