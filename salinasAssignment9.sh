@@ -68,3 +68,30 @@ done
 echo "Array in sorted order: greatest to least"
 echo ${arr2[*]}
 
+#Problem 3
+echo -e "\nProblem 3:\n"
+declare -a arr3
+for num in $(seq 1 50)
+do
+	arr3+=($num)
+done
+echo ${arr3[*]}
+
+#Problem 4
+# defining the function to find prime numbers in an array
+function find_primes {
+	if [ $# -eq 1 ]
+	then
+		local -n list=$1
+		for num in ${list[*]}
+		do
+			echo $num
+		done
+	else
+		echo This function only takes one argument - an array of numbers
+	fi
+
+}
+# calling the function and passing arr3 as an argument
+echo
+find_primes arr3
