@@ -34,5 +34,37 @@ do
     done
 done
 
-echo "Array in sorted order"
+echo "Array in sorted order: least to greatest"
 echo ${num_array[*]}
+
+#Problem 2
+echo -e "\nProblem 2:\n"
+declare -a arr2
+for num in $(seq 1 20)
+do
+	arr2+=($RANDOM)
+done
+
+echo "Array in original order"
+echo ${arr2[*]}
+
+# Performing Bubble sort
+for ((i = 0; i<20; i++))
+do
+
+    for((j = 0; j<20-i-1; j++))
+    do
+
+        if [ ${arr2[j]} -lt ${arr2[$((j+1))]} ]
+        then
+            # swap
+            temp=${arr2[j]}
+            arr2[$j]=${arr2[$((j+1))]}
+            arr2[$((j+1))]=$temp
+        fi
+    done
+done
+
+echo "Array in sorted order: greatest to least"
+echo ${arr2[*]}
+
