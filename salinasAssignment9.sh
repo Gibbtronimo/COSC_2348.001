@@ -9,8 +9,7 @@ com
 #Problem 1
 echo -e "Problem 1:\n"
 declare -a num_array
-for num in $(seq 1 20)
-do
+for num in $(seq 1 20); do
 	num_array+=($RANDOM)
 done
 
@@ -18,14 +17,9 @@ echo "Array in original order"
 echo ${num_array[*]}
 
 # Performing Bubble sort
-for ((i = 0; i<20; i++))
-do
-
-    for((j = 0; j<20-i-1; j++))
-    do
-
-        if [ ${num_array[j]} -gt ${num_array[$((j+1))]} ]
-        then
+for ((i = 0; i<20; i++)); do
+    for((j = 0; j<20-i-1; j++)); do
+        if [ ${num_array[j]} -gt ${num_array[$((j+1))]} ]; then
             # swap
             temp=${num_array[j]}
             num_array[$j]=${num_array[$((j+1))]}
@@ -40,8 +34,7 @@ echo ${num_array[*]}
 #Problem 2
 echo -e "\nProblem 2:\n"
 declare -a arr2
-for num in $(seq 1 20)
-do
+for num in $(seq 1 20); do
 	arr2+=($RANDOM)
 done
 
@@ -49,14 +42,9 @@ echo "Array in original order"
 echo ${arr2[*]}
 
 # Performing Bubble sort
-for ((i = 0; i<20; i++))
-do
-
-    for((j = 0; j<20-i-1; j++))
-    do
-
-        if [ ${arr2[j]} -lt ${arr2[$((j+1))]} ]
-        then
+for ((i = 0; i<20; i++)); do
+    for((j = 0; j<20-i-1; j++)); do
+        if [ ${arr2[j]} -lt ${arr2[$((j+1))]} ]; then
             # swap
             temp=${arr2[j]}
             arr2[$j]=${arr2[$((j+1))]}
@@ -71,8 +59,7 @@ echo ${arr2[*]}
 #Problem 3
 echo -e "\nProblem 3:\n"
 declare -a arr3
-for num in $(seq 1 50)
-do
+for num in $(seq 1 50); do
 	arr3+=($num)
 done
 echo ${arr3[*]}
@@ -80,11 +67,9 @@ echo ${arr3[*]}
 #Problem 4
 # defining the function to find prime numbers in an array
 function find_primes {
-	if [ $# -eq 1 ]
-	then
+	if [ $# -eq 1 ]; then
 		local -n list=$1
-		for num in ${list[*]}
-		do
+		for num in ${list[*]}; do
 			echo $num
 		done
 	else
