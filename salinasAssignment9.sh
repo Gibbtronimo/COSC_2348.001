@@ -97,3 +97,25 @@ echo ${arr3[*]}
 # calling the function and passing arr3 as an argument
 #echo
 #find_primes arr3
+
+#Problem 5
+echo -e "\nProblem 5:\n"
+declare -a even_arr
+declare -a odd_arr
+even_sum=0
+odd_sum=0
+for num in $(seq 1 50); do
+	if test $((num%2)) -eq 0; then
+		even_arr+=($num)
+		even_sum=$((even_sum + num))
+	else
+		odd_arr+=($num)
+		odd_sum=$((odd_sum + num))
+	fi
+done
+echo Even array:
+echo ${even_arr[*]}
+echo Even sum: $even_sum
+echo Odd array:
+echo ${odd_arr[*]}
+echo Odd sum: $odd_sum
