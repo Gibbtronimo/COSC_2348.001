@@ -94,6 +94,7 @@ class Student():
 # random number generator
 randlist = random.sample(range(70,100),6)
 print(randlist)
+stuList = {}
 for i in range(25):
     randlist = random.sample(range(70,100),6)
     print(("student%d: ",randlist).format(i))
