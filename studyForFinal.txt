@@ -1,0 +1,64 @@
+- Go over assignments
+	- A2P5
+	- A3P4
+	- A4: exception handling (use try/except blocks)
+	- improve UI for all assignments
+	- A5: change upperCase to use .title()
+- Review Arrays in shell script
+- Review recursive functions
+- Get familiar with class creation
+
+*** 
+
+Python:
+1. run / execute
+2. comments
+3. variables
+4. reading input from keyboard
+5. math operations
+6. decision structures
+7. logical operations
+8. various types of comparisons
+9. repeating decision structure
+10. functions
+	- void functions
+	- return functions
+	- recursive functions
+11. import statement
+12. OOPs
+13. public and private variables
+Topics below available to present on for extra credit
+Answer all questions for double points
+-------------   -> group to present on
+15. list
+16. tuples
+17. dictionary
+18. set
+-------------
+-> below individual
+19. strings (regex)
+20. read/write file (include class and dictionary) (1 of these in final)
+21. exceptions (try/block) (1 in final)
+22. regex (1 in final)
+
+Final:
+Q1: read & write using class & dictionary (python)
+Q2: list, tuple, dict, set (python)
+Q3: strings, regex (python)
+Q4: list (sort with function, not method) (python)
+
+Shell:
+1. study linux OS w/ various commands
+2. types of shells
+3. create/execute scripts
+4. 
+5. 
+6. 
+7. 
+8. 
+9. 
+10. 
+
+
+Final:
+Q5: any problem from A10
