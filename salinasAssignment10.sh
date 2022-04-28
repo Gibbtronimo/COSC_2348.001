@@ -8,26 +8,38 @@ com
 
 #Problem 1
 echo Problem 1:
-#sum1="A10nums.txt"
-#declare -a num_array
-#while read line; do
-#	echo $line
-#	num_array+=($line)
-#done < $sum1
-#echo ${num_array[@]}
-#
-#function recursive_add () {
-#	local file=$1
-#	local n=$2
-#	global sum=$((file[n]))
-#	if (( n == 0 )); then
-#		echo $n
-#		return
-#	fi
-#	$FUNCNAME $file $((n-1)) $((sum+n))
-#}
-#
-#recursive_add $sum1 5
+
+sum1="A10nums.txt"
+i=0
+
+while read line; do
+	a[i]=$line
+	let i+=1
+done < $sum1
+
+echo array: ${a[@]}
+sum=0
+
+function recursive_sum () {
+	index=$1
+	sum=$2
+
+	if [ ${#a[@]} -lt 1 ]; then
+		return 0
+	else
+		temp1=${a[$index]}
+		let sum=sum+temp1
+		unset a[index]
+		let temp2=index+1
+		recursive_sum $temp2 $sum
+	fi
+
+}
+
+recursive_sum 0 $sum
+totalSum=$?
+echo The final sum: 
+echo "$sum"
 
 #Problem 2
 echo -e "\nProblem 2:\n"
